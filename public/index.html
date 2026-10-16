@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VerityRoad — Evidence before assertion</title>
+  <meta name="description" content="Compare road-damage and garbage reports with what submitted photographs can actually show." />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <a class="brand" href="#/" data-nav>
+          <img src="/logo.svg" alt="" width="32" height="32" />
+          <span>VerityRoad</span>
+        </a>
+        <span class="chip">Civic evidence</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#/" data-nav data-route="home">Product</a>
+        <a href="#/methodology" data-nav data-route="methodology">How it works</a>
+        <a href="#/standards" data-nav data-route="standards">Evidence standards</a>
+        <a href="#/workspace" data-nav data-route="workspace">Workspace</a>
+      </nav>
+      <a class="btn btn-primary" href="#/workspace" data-nav>Analyse evidence</a>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" hidden>
+      <a href="#/" data-nav>Product</a>
+      <a href="#/methodology" data-nav>How it works</a>
+      <a href="#/standards" data-nav>Evidence standards</a>
+      <a href="#/privacy" data-nav>Privacy</a>
+      <a href="#/workspace" data-nav>Workspace</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div id="view-home" class="view active">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="kicker"><span class="material-symbols-outlined" style="font-size:14px">policy</span> Civic forensic audit instrument</div>
+            <h1>A stronger complaint starts with stronger evidence.</h1>
+            <p class="lede">Turn road-damage and garbage photographs into clearer, evidence-aware reports. See what your image supports, what remains uncertain, and what to capture next.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#/workspace" data-nav>
+                <span class="material-symbols-outlined" style="font-size:18px">document_scanner</span>
+                Analyse road or waste evidence
+              </a>
+              <a class="btn btn-secondary" href="#how-it-works">See how it works</a>
+            </div>
+            <div class="note">
+              <span class="material-symbols-outlined" style="font-size:18px;color:var(--primary-container)">verified_user</span>
+              <p>VerityRoad separates visible inspection from speculation. Generated drafts are for you to edit and verify before sending to any authority.</p>
+            </div>
+          </div>
+          <div class="card preview-card">
+            <div class="preview-bar">
+              <span>Inspection frame</span>
+              <span>Evidence-first</span>
+            </div>
+            <div class="preview-stage">
+              <div style="padding:1.25rem;text-align:center">
+                <span class="material-symbols-outlined" style="font-size:40px;color:var(--primary-container)">photo_camera</span>
+                <p>Upload a photograph. The model reports only what the image can show.</p>
+              </div>
+            </div>
+            <div class="preview-meta">
+              <div class="meta-grid">
+                <div class="meta-box">
+                  <span>Visible finding</span>
+                  <strong>Surface cavity, pooling, cracked asphalt</strong>
+                </div>
+                <div class="meta-box">
+                  <span>Limitation</span>
+                  <strong>Depth cannot be measured from one photo</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="strip">
+        <div class="wrap principles">
+          <article class="principle">
+            <div class="icon-box"><span class="material-symbols-outlined">camera</span></div>
+            <div>
+              <h3>Image-grounded observations</h3>
+              <p>Notes stay tied to visible conditions. User claims are never treated as proven facts.</p>
+            </div>
+          </article>
+          <article class="principle">
+            <div class="icon-box"><span class="material-symbols-outlined">help_center</span></div>
+            <div>
+              <h3>Explicit uncertainty</h3>
+              <p>Angle, shadow, and resolution limits are shown instead of false precision.</p>
+            </div>
+          </article>
+          <article class="principle">
+            <div class="icon-box"><span class="material-symbols-outlined">turn_sharp_right</span></div>
+            <div>
+              <h3>Evidence-guided next steps</h3>
+              <p>Get specific, safe follow-up photos or records that could close a gap.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="kicker">The VerityRoad protocol</span>
+              <h2>How civic evidence is reviewed</h2>
+            </div>
+            <p class="muted" style="max-width:24rem">Three stages: submit, compare claims with the photograph, then strengthen the report.</p>
+          </div>
+          <div class="steps" role="tablist">
+            <button class="step" type="button" data-step-tab="1" aria-pressed="true">
+              <span class="step-num">01</span>
+              <h3>Submit evidence</h3>
+              <p class="muted">Choose road damage or garbage, upload a photo, and write the claims you want checked.</p>
+            </button>
+            <button class="step" type="button" data-step-tab="2" aria-pressed="false">
+              <span class="step-num">02</span>
+              <h3>Review what is supported</h3>
+              <p class="muted">Each claim is graded against visible evidence, with statuses and limitations.</p>
+            </button>
+            <button class="step" type="button" data-step-tab="3" aria-pressed="false">
+              <span class="step-num">03</span>
+              <h3>Strengthen the report</h3>
+              <p class="muted">Add another photo if needed, then edit and copy a cautious complaint draft.</p>
+            </button>
+          </div>
+          <div class="card panel" id="stepDetail">
+            <h3>Capture the scene, then state the claim</h3>
+            <p class="muted">Use JPEG, PNG, or WEBP. Keep a safe vantage point. Write specific claims on separate lines so they can be assessed one by one.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0">
+        <div class="wrap">
+          <span class="kicker">Evidence taxonomy</span>
+          <h2>What a photograph can and cannot do</h2>
+          <div class="taxonomy" style="margin-top:1rem">
+            <article class="card tax-card">
+              <span class="badge badge-ok">Visible evidence</span>
+              <h3>Supported by the image</h3>
+              <p>A claim about a condition that is clearly shown, such as cracked asphalt next to a drain grate.</p>
+              <p class="quote">“Broken pavement around the grate is visible in the photo.”</p>
+            </article>
+            <article class="card tax-card">
+              <span class="badge badge-warn">Not measurable</span>
+              <h3>Consistent, but incomplete</h3>
+              <p>A hole may be visible while depth, width, or duration still need a scale object or extra angle.</p>
+              <p class="quote">“The cavity looks substantial, but 4-inch depth is not measurable here.”</p>
+            </article>
+            <article class="card tax-card">
+              <span class="badge badge-ext">External record</span>
+              <h3>Unverifiable from the image</h3>
+              <p>Ownership, dates, prior complaints, accidents, and legal responsibility need other records.</p>
+              <p class="quote">“The city ignored earlier tickets” cannot be shown by a photo.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-band">
+        <div class="wrap">
+          <h2>Make every claim more accountable.</h2>
+          <p class="lede">Compare what you wrote with what the photograph actually shows before you file.</p>
+          <div class="cta-row" style="justify-content:center">
+            <a class="btn btn-primary" href="#/workspace" data-nav>Start an evidence review</a>
+            <a class="btn btn-secondary" href="#/standards" data-nav>Read evidence standards</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="view-workspace" class="view">
+      <div class="wrap">
+        <div class="workspace-head">
+          <div>
+            <p class="muted" style="margin:0 0 0.35rem;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;font-weight:600">Analysis workspace</p>
+            <h1 style="font-size:1.7rem;margin:0">Evidentiary review</h1>
+          </div>
+          <div class="stepper" aria-label="Workflow steps">
+            <button type="button" data-goto="form" aria-current="step">1 Upload</button>
+            <button type="button" data-goto="progress">2 Inspection</button>
+            <button type="button" data-goto="results">3 Dossier</button>
+            <button type="button" data-goto="draft">4 Draft</button>
+          </div>
+        </div>
+
+        <p id="serviceBanner" class="form-error hidden" role="status"></p>
+
+        <section id="panel-form" class="layout">
+          <form id="reportForm" class="card panel" novalidate>
+            <h2>Submit evidence</h2>
+            <div class="field">
+              <span class="label" id="issueLabel">Issue type</span>
+              <div class="issue-grid" role="radiogroup" aria-labelledby="issueLabel">
+                <label class="choice">
+                  <input type="radio" name="issueType" value="road_damage" checked />
+                  <span>
+                    <strong>Pothole / road damage</strong>
+                    <span class="help">Surface breaks, cavities, crumbling asphalt, standing water in the roadway.</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="issueType" value="garbage" />
+                  <span>
+                    <strong>Garbage / waste accumulation</strong>
+                    <span class="help">Dumped bags, scattered debris, overflowing piles visible in the scene.</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="photoInput">Photograph</label>
+              <div class="dropzone">
+                <p>JPEG, PNG, or WEBP. Maximum 6 MB each, up to two photos.</p>
+                <input id="photoInput" name="photo" type="file" accept="image/jpeg,image/png,image/webp" />
+              </div>
+              <div id="previewList" class="previews"></div>
+            </div>
+            <div class="field">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" maxlength="4000" required placeholder="What did you see, and from where did you take the photo?"></textarea>
+            </div>
+            <div class="field">
+              <label for="claims">Specific claims (one per line)</label>
+              <textarea id="claims" name="claims" maxlength="4000" required placeholder="There is a pothole in the travel lane&#10;It is about two feet deep&#10;It damaged a vehicle yesterday"></textarea>
+              <p class="help">Each line is assessed separately against the photograph.</p>
+            </div>
+            <p id="formError" class="form-error hidden" role="alert"></p>
+            <button class="btn btn-primary" id="submitBtn" type="submit">Compare claims with the image</button>
+          </form>
+          <aside class="card panel">
+            <h3>Before you file</h3>
+            <ul class="list">
+              <li>A photo cannot prove exact depth, ownership, cause, or legal responsibility.</li>
+              <li>If something is not in the frame, that is not proof it is false.</li>
+              <li>Stay out of traffic. Photograph from a sidewalk or other safe place.</li>
+              <li>Images are sent to the server for one analysis and are not stored on disk.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section id="panel-progress" class="card progress hidden" aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          <h2>Inspecting visible evidence</h2>
+          <p class="muted" id="progressText">Sending the photograph and claims to Gemma. This can take a little while.</p>
+          <button class="btn btn-secondary hidden" id="cancelHint" type="button" disabled>Please wait…</button>
+        </section>
+
+        <section id="panel-error" class="card panel hidden">
+          <h2>Analysis could not finish</h2>
+          <p id="analyzeError" class="form-error" role="alert"></p>
+          <div class="cta-row">
+            <button class="btn btn-primary" id="retryBtn" type="button">Retry analysis</button>
+            <button class="btn btn-secondary" id="editBtn" type="button">Edit submission</button>
+          </div>
+        </section>
+
+        <section id="panel-results" class="layout hidden">
+          <div class="card panel">
+            <h2>Visible observations</h2>
+            <p class="muted" id="qualityNote"></p>
+            <ul class="list" id="observationList"></ul>
+            <h3 style="margin-top:1.25rem">Evidence gaps</h3>
+            <ul class="list" id="gapList"></ul>
+            <h3 style="margin-top:1.25rem">What this photo cannot establish</h3>
+            <ul class="list" id="cannotList"></ul>
+          </div>
+          <div class="card panel">
+            <h2>Claim-by-claim assessment</h2>
+            <div class="findings" id="findings"></div>
+            <h3 style="margin-top:1.25rem">Suggested next evidence</h3>
+            <ul class="list" id="nextList"></ul>
+            <div class="field" style="margin-top:1.25rem">
+              <label for="extraPhoto">Add another photograph and reassess</label>
+              <input id="extraPhoto" type="file" accept="image/jpeg,image/png,image/webp" />
+              <p class="help">Keeps your claims and description. Replaces or adds a second image.</p>
+            </div>
+            <div class="cta-row">
+              <button class="btn btn-primary" id="reassessBtn" type="button">Reassess with added evidence</button>
+              <button class="btn btn-secondary" id="toDraftBtn" type="button">Open complaint draft</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-draft" class="layout hidden">
+          <div class="card panel">
+            <div class="banner-ok" role="note">This draft is editable. Verify every statement before submitting it to any authority. VerityRoad does not send reports for you.</div>
+            <div class="draft-tools">
+              <strong>Complaint draft</strong>
+              <span class="counts" id="draftCounts"></span>
+            </div>
+            <label class="hidden" for="complaintDraft">Complaint draft</label>
+            <textarea id="complaintDraft"></textarea>
+            <div class="cta-row">
+              <button class="btn btn-primary" id="copyBtn" type="button">Copy draft</button>
+              <button class="btn btn-secondary" id="resetDraftBtn" type="button">Reset to generated text</button>
+              <span class="help" id="copyStatus" aria-live="polite"></span>
+            </div>
+          </div>
+          <aside class="card panel">
+            <h3>Uncertainty</h3>
+            <ul class="list" id="uncertaintyList"></ul>
+            <button class="btn btn-ghost" id="backResultsBtn" type="button">Back to dossier</button>
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <div id="view-methodology" class="view">
+      <div class="wrap doc card panel">
+        <h1>Methodology</h1>
+        <p>VerityRoad sends your photograph and claim text to a hosted Gemma 4 model. The server asks the model to list visible observations, grade each claim, name evidence gaps, and draft a cautious complaint. Results are checked against a JSON schema before they reach the browser.</p>
+        <h2>What the model is asked to do</h2>
+        <p>Describe only visible conditions. Compare each claim with those observations. Use statuses that distinguish support, incomplete measurement, absence from the frame, apparent conflict, external records, and insufficient information.</p>
+        <h2>Limitations</h2>
+        <p>This is assistive software, not an official inspection. Lighting, angle, occlusion, and model error can all produce incomplete or incorrect notes. Always review the output. A missing detail in a photo is not proof that a claim is false.</p>
+        <p><a href="#/workspace" data-nav>Open the workspace</a></p>
+      </div>
+    </div>
+
+    <div id="view-standards" class="view">
+      <div class="wrap doc card panel">
+        <h1>Evidence standards</h1>
+        <p><strong>supported_by_visible_evidence</strong> — the photo clearly shows the claimed visible condition.</p>
+        <p><strong>consistent_but_not_measurable</strong> — consistent with the photo, but size, depth, quantity, or duration cannot be established.</p>
+        <p><strong>not_visible_in_image</strong> — not shown; absence is not disproof.</p>
+        <p><strong>appears_inconsistent_with_image</strong> — visible conditions appear to conflict; still not a legal finding.</p>
+        <p><strong>requires_external_evidence</strong> — ownership, dates, accidents, prior tickets, or responsibility.</p>
+        <p><strong>insufficient_information</strong> — quality or context is too weak for a useful assessment.</p>
+        <p>Photographs cannot prove exact pothole depth, road ownership, cause, accident history, legal responsibility, or exact location without independent records.</p>
+      </div>
+    </div>
+
+    <div id="view-privacy" class="view">
+      <div class="wrap doc card panel">
+        <h1>Privacy and limitations</h1>
+        <p>There is no account system. Images and claim text are processed in server memory for a single analysis request and are not written to disk by this application. The hosted model provider receives the content needed to run the request under that provider’s terms.</p>
+        <p>Do not upload images of bystanders, license plates, or other personal data unless you have a lawful reason. Avoid photographing from the travel lane.</p>
+        <p>Generated drafts can be wrong. You are responsible for checking them before any official filing.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong class="brand" style="display:inline-flex"><span>VerityRoad</span></strong>
+        <p class="muted" style="font-family:var(--font-display);font-style:italic">Evidence before assertion.</p>
+        <p class="muted">A focused tool for comparing civic complaints with what a photograph can actually show.</p>
+      </div>
+      <div>
+        <h3 class="label">Disclosure</h3>
+        <p class="muted">Model output is not an official inspection, legal advice, or proof of liability.</p>
+      </div>
+      <div>
+        <h3 class="label">Public notes</h3>
+        <nav class="footer-nav">
+          <a href="#/methodology" data-nav>Methodology</a>
+          <a href="#/standards" data-nav>Evidence standards</a>
+          <a href="#/privacy" data-nav>Privacy and limitations</a>
+        </nav>
+      </div>
+    </div>
+    <div class="wrap legal">VerityRoad. Verify generated drafts before submitting them to any authority.</div>
+  </footer>
+  <script src="/app.js?v=2" type="module"></script>
+</body>
+</html>

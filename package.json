@@ -1,0 +1,27 @@
+{
+  "name": "verityroad",
+  "version": "1.0.0",
+  "description": "VerityRoad: Evidence before assertion - Gemma 4 API Integration & Verification",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "build": "node --check src/server.mjs && node --check src/gemma.mjs && node --check src/schema.mjs && node --check src/validation.mjs && node --check public/app.js",
+    "test": "node test-validation.mjs && node test/test-product-schema.mjs && node test/test-api.mjs",
+    "test:text": "node test-gemma.mjs --text",
+    "test:image": "node test-gemma.mjs --image",
+    "test:live": "node test/test-live-gemma.mjs",
+    "test:all": "npm test && npm run build"
+  },
+  "keywords": [
+    "verityroad",
+    "gemma4",
+    "civic-tech",
+    "evidence-verification"
+  ],
+  "author": "VerityRoad Team",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^2.29.1",
+    "dotenv": "^16.4.7"
+  }
+}
