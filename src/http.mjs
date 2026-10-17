@@ -22,10 +22,7 @@ export function applyCors(req, res) {
       res.setHeader('Access-Control-Allow-Origin', configured);
       res.setHeader('Vary', 'Origin');
     }
-  } else if (origin) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    res.setHeader('Vary', 'Origin');
-  } else {
+  } else if (!origin) {
     res.setHeader('Access-Control-Allow-Origin', '*');
   }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');

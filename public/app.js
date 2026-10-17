@@ -219,6 +219,7 @@ async function buildPayload() {
 async function runAnalysis() {
   if (state.inflight) return;
   showFormError('');
+  $('analyzeError').textContent = '';
   let payload;
   try {
     payload = await buildPayload();

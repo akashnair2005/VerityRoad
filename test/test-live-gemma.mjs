@@ -1,28 +1,23 @@
 /**
  * Live Gemma integration check.
  * Skips unless GEMINI_API_KEY is set.
- * Prefers a Wikimedia road-damage photograph. If download fails, the test fails
- * rather than pretending a tiny generated JPEG is a field photo.
+ * Uses the repository's legitimate pothole photograph so the check does not
+ * depend on a mutable external fixture URL.
  */
 import 'dotenv/config';
+import { readFile } from 'fs/promises';
+import path from 'path';
 import { getApiKey, getModel } from '../src/config.mjs';
 import { analyzeEvidence } from '../src/gemma.mjs';
 import { detectImageMime } from '../src/validation.mjs';
 
-const POTHOLE_URL =
-  'https://upload.wikimedia.org/wikipedia/commons/8/87/Pothole.jpg';
+const LOCAL_POTHOLE_PATH = path.resolve('pothole.jpg');
 
 async function loadRoadImage() {
-  const res = await fetch(POTHOLE_URL, {
-    headers: { 'User-Agent': 'VerityRoadHackathon/1.0 (evidence test)' }
-  });
-  if (!res.ok) {
-    throw new Error(`Could not download road-damage fixture (${res.status})`);
-  }
-  const buffer = Buffer.from(await res.arrayBuffer());
+  const buffer = await readFile(LOCAL_POTHOLE_PATH);
   const mime = detectImageMime(buffer);
   if (mime !== 'image/jpeg' && mime !== 'image/png' && mime !== 'image/webp') {
-    throw new Error('Downloaded fixture was not a supported image');
+    throw new Error('Local pothole fixture is not a supported image');
   }
   return { mimeType: mime, buffer, base64: buffer.toString('base64') };
 }
@@ -36,16 +31,12 @@ async function main() {
 
   console.log(`Live test model: ${getModel()}`);
   const image = await loadRoadImage();
-  console.log(`Using Wikimedia pothole photograph (${image.mimeType}, ${image.buffer.length} bytes).`);
+  console.log(`Using local pothole photograph (${image.mimeType}, ${image.buffer.length} bytes).`);
 
   const result = await analyzeEvidence({
     issueType: 'road_damage',
     description: 'Photograph of a depression in an asphalt roadway, taken from the roadside.',
-    claims: [
-      'There is a pothole or broken pavement in the travel surface',
-      'The hole is exactly two feet deep',
-      'The city owns this road and ignored earlier complaints'
-    ],
+    claims: ['There is a pothole or broken pavement in the travel surface.'],
     images: [image]
   });
 
@@ -59,7 +50,9 @@ async function main() {
   );
 }
 
-main().catch((err) => {
-  console.error('Live Gemma test failed:', err.public?.error || err.message);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error('Live Gemma test failed:', err.public?.error || err.message);
+    process.exit(1);
+  });

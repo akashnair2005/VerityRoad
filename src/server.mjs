@@ -166,8 +166,8 @@ export function createServer(options = {}) {
 export function startServer() {
   const server = createServer();
   const port = getPort();
-  server.listen(port, () => {
-    console.log(`VerityRoad listening on http://localhost:${port}`);
+  server.listen(port, '0.0.0.0', () => {
+    console.log(`VerityRoad listening on port ${port}`);
   });
   return server;
 }

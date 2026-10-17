@@ -87,6 +87,11 @@ async function run() {
   const ready = await request(port, { path: '/api/ready' });
   assert(ready.status === 200 && typeof ready.json.configured === 'boolean', 'GET /api/ready');
   assert(ready.headers['x-content-type-options'] === 'nosniff', 'Security headers present');
+  const crossOrigin = await request(port, {
+    path: '/health',
+    headers: { Origin: 'https://untrusted.example' }
+  });
+  assert(!crossOrigin.headers['access-control-allow-origin'], 'Unconfigured CORS rejects cross-origin access');
 
   const method = await request(port, { method: 'GET', path: '/api/analyze' });
   assert(method.status === 405, 'GET /api/analyze is rejected');
